@@ -17,7 +17,7 @@ import { ProductsComponent } from './pages/products/products.component';
     AppComponent, 
     NavbarComponent, 
     NotFoundComponent, 
-    AdminComponent, AccueilComponent, ProductsComponent
+    AdminComponent, AccueilComponent, ProductsComponent,
   ],
   imports: [
     BrowserModule, 
