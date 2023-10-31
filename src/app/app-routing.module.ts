@@ -6,7 +6,7 @@ import { AdminComponent } from './pages/admin/admin.component';
 import { NotFoundComponent } from './pages/not-found/not-found.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: 'home', pathMatch: 'full' },
+  { path: '', redirectTo: 'accueil', pathMatch: 'full' },
   { path: 'accueil', component: AccueilComponent },
   { path: 'products', component: ProductsComponent },
   { path: 'admin', component: AdminComponent },
