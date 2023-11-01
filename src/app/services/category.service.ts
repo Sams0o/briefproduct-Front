@@ -21,12 +21,5 @@ export class CategoryService {
     return this.http.get<Category[]>('http://localhost:3000/api/categories', {headers: this.setHeaders()});
   }
 
-  // addCategories(category: Category) {
-  //   return this.http.post<Category>(
-  //     'http://localhost:3000/api/categories',
-  //     category,
-  //     { headers: this.setHeaders() }
-  //   );
-  // }
 }
   

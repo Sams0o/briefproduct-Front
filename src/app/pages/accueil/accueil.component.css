@@ -6,26 +6,24 @@
   height: 100vh;
   text-align: center;
   background-color: rgb(248, 243, 236);
-  color: #333; /* Couleur du texte */
+  color: #333;
 }
 
 h1 {
-  font-size: 2rem;
   margin-bottom: 1rem;
 }
 
 .A {
-    color: #f86655;
-    font-size: 4rem;
+  color: #f86655;
+  font-size: 4rem;
 }
 
 .B {
-    color: #f8412d;
-    font-size: 4rem;
-    font-variant: small-caps;
-    font-weight: 600;
+  color: #f8412d;
+  font-size: 4rem;
+  font-variant: small-caps;
+  font-weight: 600;
 }
-
 
 p {
   font-size: 1.2rem;
@@ -36,7 +34,7 @@ p {
 button {
   padding: 0.5rem 1.1rem;
   font-size: 1.2rem;
-  background-color: #ef4321; /* Couleur du bouton */
+  background-color: #ef4321;
   color: white;
   border: none;
   border-radius: 5px;
@@ -45,5 +43,31 @@ button {
 }
 
 button:hover {
-  background-color: #d82c0a; 
+  background-color: #d82c0a;
+}
+
+/* Pour les écrans de petite taille (téléphones) */
+@media screen and (max-width: 768px) {
+  .home-container {
+    padding: 2rem;
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+
+  .A,
+  .B {
+    font-size: 2rem;
+  }
+
+  p {
+    font-size: 1rem;
+    padding: 0rem;
+  }
+
+  button {
+    font-size: 1rem;
+    padding: 0.5rem 1rem;
+  }
 }

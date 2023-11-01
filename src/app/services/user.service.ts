@@ -32,8 +32,5 @@ export class UserService {
     console.log('userService:', data);
     return this.http
       .post<ResponseLogin>('http://localhost:3000/api/auth/login', data)
-      // .subscribe((res) => {
-      //   console.log('loginUserService', res.accessToken);
-      // })
   }
 }
