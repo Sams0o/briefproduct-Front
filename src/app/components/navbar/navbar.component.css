@@ -1,4 +1,19 @@
+.A {
+    color: #f86655;
+}
+
+.B {
+    color: #f8412d;
+    font-variant: small-caps;
+    font-weight: 600;
+}
+
+.nav-link:hover {
+    color: #f7321c;
+    font-weight: bold;
+}
+
 .ma-classe-active {
-    color: rgba(0, 112, 62, 0.93);
+    color: #f7321c;
     font-weight: bold;
 }

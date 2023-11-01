@@ -1,0 +1,44 @@
+.title {
+  color: #f65240;
+  font-size: 2rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  padding: 0rem 2.5rem 0rem 2.5rem;
+}
+
+.card {
+  background-color: antiquewhite;
+  margin: auto;
+}
+
+label {
+    font-variant: small-caps;
+    font-weight: 600;
+}
+
+.input-error {
+  border: 0.13rem solid #982312;
+}
+
+.alert {
+  color: #982312;
+  font-size: 0.7rem;
+  padding-top: 0;
+  padding-bottom: 0;
+  margin-bottom: 0;
+}
+
+.btn-success {
+  background-color: #fa6f60;
+  border: none;
+  font-weight: 600;
+  padding: 0.5rem 1rem 0.5rem 1rem;
+}
+
+.btn-success:hover {
+  background-color: #f94c39;
+}
+
+u {
+    color: #f94c39;
+}

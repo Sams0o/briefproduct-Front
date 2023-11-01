@@ -1,0 +1,78 @@
+<div class="container d-flex justify-content-center">
+
+    <div class="card mb-4 mt-4" style="border-radius: 3rem;">
+        <div class="card-body p-4">
+            <h1 class="title text-center mb-4">Créer votre compte</h1>
+
+            <form #registerUser="ngForm" (ngSubmit)=" registration(registerUser)">
+                <div class="form-group mb-4">
+                    <label class="form-label" for="firstName">Votre prénom</label>
+                    <input id="firstName" type="text" required class="form-control shadow-sm p-2"
+                        [(ngModel)]="user.first_name" name="first_name" #first_name="ngModel"
+                        [class.input-error]="first_name.invalid && isFormSubmit" placeholder="Ex : Léa" />
+                    <div *ngIf="first_name.invalid && isFormSubmit" class="alert">
+                        <div *ngIf="first_name.errors?.['required']">Ce champ est obligatoire.</div>
+                    </div>
+                </div>
+
+                <div class="form-group mb-4">
+                    <label class="form-label" for="lastName">Votre nom</label>
+                    <input id="lastName" type="text" required class="form-control shadow-sm p-2"
+                        [(ngModel)]="user.last_name" name="first_name" #last_name="ngModel"
+                        [class.input-error]="last_name.invalid && isFormSubmit" placeholder="Ex : Martin" />
+                    <div *ngIf="last_name.invalid && isFormSubmit" class="alert">
+                        <div *ngIf="last_name.errors?.['required']">Ce champ est obligatoire.</div>
+                    </div>
+                </div>
+
+                <div class="form-group mb-4">
+                    <label class="form-label" for="email">Votre email</label>
+                    <input type="email" required pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$"
+                        class="form-control shadow-sm p-2" [(ngModel)]="user.email" name="email" #email="ngModel"
+                        [class.input-error-email]="!registrationValid"
+                        [class.input-error]="email.invalid && isFormSubmit" placeholder="example@email.fr" />
+                    <div *ngIf="email.invalid && isFormSubmit" class="alert">
+                        <div *ngIf="email.errors?.['required']">
+                            L'email est obligatoire.
+                        </div>
+                        <div *ngIf="email.errors?.['pattern']">
+                            Veuillez entrer une adresse email valide.
+                        </div>
+                    </div>
+                    <div *ngIf="!registrationValid" class="alert">
+                        Veuillez verifier vos informations.
+                    </div>
+                </div>
+
+                <div class="form-group mb-4">
+                    <label class="form-label" for="password">Votre mot de passe</label>
+                    <input type="password" required
+                        pattern="(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{12,}"
+                        class="form-control shadow-sm p-2" [(ngModel)]="user.password" name="password"
+                        #password="ngModel" [class.input-error]="password.invalid && isFormSubmit"
+                        placeholder="************" />
+                    <div *ngIf="password.invalid && isFormSubmit" class="alert">
+                        <div *ngIf="password.errors?.['required']">
+                            Le mot de passe est obligatoire.
+                        </div>
+                        <div class="errorMdp" *ngIf="password.errors?.['pattern']">
+                            Au moins 12 caractères, 1 majuscule, 1 chiffre et 1 symbole.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="d-flex justify-content-center">
+                    <button type="submit" class="btn btn-success btn-block gradient-custom-4 ">S'inscrire</button>
+                </div>
+
+                <p class="text-center text-muted mt-3 mb-0">Déjà un compte ? <a [routerLink]="['/admin/login']"
+                        class=" fw-bold text-body "><u>Connectez-vous</u></a></p>
+            </form>
+
+        </div>
+    </div>
+</div>
+                   
+
+
+

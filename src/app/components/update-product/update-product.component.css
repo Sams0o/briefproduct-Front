@@ -1,0 +1,46 @@
+.modal-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  max-width: 40%;
+}
+
+.form-group {
+    padding: 0.5rem;
+}
+
+
+.btn-success {
+    margin-right: 1rem;  
+}
+
+
+/* Pour les écrans larges */
+@media screen and (min-width: 48rem) {
+  .modal-content {
+    max-width: 400px; 
+  }
+}
+
+/* Pour les écrans plus petits, comme les téléphones */
+@media screen and (max-width: 46rem) {
+  .modal-background {
+    justify-content:center; 
+  }
+
+  .modal-content {
+    max-width: 90%; 
+  }
+}

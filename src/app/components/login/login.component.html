@@ -1,0 +1,51 @@
+<div class="container d-flex justify-content-center">
+
+    <div class="card mb-4 mt-4" style="border-radius: 3rem;">
+        <div class="card-body p-4">
+            <h1 class="title text-center mb-4">Enregistrez-vous</h1>
+
+            <form #connectionUser="ngForm" (ngSubmit)=" connection()">
+                <div class="form-group mb-4">
+                    <label class="form-label" for="email">Votre email</label>
+                    <input type="email" required 
+                        class="form-control shadow-sm p-2" [(ngModel)]="user.email" name="email" #email="ngModel"
+                        [class.input-error-email]="!loginInvalid"
+                        [class.input-error]="email.invalid && isFormValidate" placeholder="example@email.fr" />
+                    <div *ngIf="email.invalid && isFormValidate" class="alert">
+                        <div *ngIf="email.errors?.['required']">
+                            L'email est obligatoire.
+                        </div>
+                        <div *ngIf="email.errors?.['pattern']">
+                            Veuillez entrer une adresse email valide.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group mb-4">
+                    <label class="form-label" for="password">Votre mot de passe</label>
+                    <input type="password" required
+                        pattern="(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{12,}"
+                        class="form-control shadow-sm p-2" [(ngModel)]="user.password" name="password"
+                        #password="ngModel" [class.input-error]="password.invalid && isFormValidate"
+                        placeholder="************" />
+                    <div *ngIf="password.invalid && isFormValidate" class="alert">
+                        <div *ngIf="password.errors?.['required']">
+                            Le mot de passe est obligatoire.
+                        </div>
+                        <div class="errorMdp" *ngIf="password.errors?.['pattern']">
+                            Au moins 12 caractères, 1 majuscule, 1 chiffre et 1 symbole.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="d-flex justify-content-center">
+                    <button type="submit" class="btn btn-success btn-block gradient-custom-4 ">Se connecter</button>
+                </div>
+
+                <p class="text-center text-muted mt-3 mb-0">Pas de compte ? <a [routerLink]="['/admin/register']"
+                        class=" fw-bold text-body "><u>Inscrivez-vous</u></a></p>
+            </form>
+
+        </div>
+    </div>
+</div>

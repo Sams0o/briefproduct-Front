@@ -1,0 +1,21 @@
+.title {
+  color: #f65240;
+  font-size: 2rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  padding: 0rem 2.5rem 0rem 2.5rem;
+}
+
+.card {
+  background-color: antiquewhite;
+  margin: auto;
+}
+
+label {
+    font-variant: small-caps;
+    font-weight: 600;
+}
+
+.btn-success {
+    margin-right: 1rem;
+}

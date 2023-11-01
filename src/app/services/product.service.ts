@@ -21,6 +21,12 @@ export class ProductService {
     return this.http.get<Product[]>('http://localhost:3000/api/products');
   }
 
+  getProductId(idProduct: number): Observable<Product> {
+    return this.http.get<Product>(`http://localhost:3000/api/products/${idProduct}`,
+      { headers: this.setHeaders()}
+    );
+  }
+
   addProduct(product: Product) {
     return this.http.post<Product>(
       'http://localhost:3000/api/products',
@@ -37,9 +43,9 @@ export class ProductService {
     );
   }
 
-  removeProduct(product: Product) {
+  removeProduct(product: number) {
     return this.http.delete<Product>(
-      `http://localhost:3000/api/products/${product.id}`,
+      `http://localhost:3000/api/products/${product}`,
       { headers: this.setHeaders() }
     );
   }

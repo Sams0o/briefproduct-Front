@@ -1,0 +1,39 @@
+<div class="container d-flex justify-content-center">
+
+    <div class="card mb-4 mt-4" style="border-radius: 3rem;">
+        <div class="card-body p-4">
+            <h2 class="title text-center mb-4">Ajouter un produit</h2>
+
+            <form [formGroup]="toAddProduct" (ngSubmit)="onSubmit()">
+                <div class="form-group mb-4">
+                    <label class="form-label" for="nameProduct">name</label>
+                    <input id="nameProduct" type="text" required class="form-control shadow-sm p-2" formControlName="name"/>
+                </div>
+
+                <div class="form-group mb-4">
+                    <label class="form-label" for="priceProduct">Prix</label>
+                    <input id="priceProduct" type="number" required class="form-control shadow-sm p-2" formControlName="price" step="0.01" min="0"/>
+                </div>
+
+                    <div class="form-group mb-4">
+                        <label class="form-label" for="quantityProduct">Quantité</label>
+                        <input id="quantityProduct" type="number" required class="form-control shadow-sm p-2" formControlName="quantity"/>
+                    </div>
+                
+                    <div class="form-group mb-4">
+                        <label class="form-label" for="categoryProduct">Catégorie</label>
+                        <select class="form-control" formControlName="category_id"><option *ngFor="let category of categories" [value]="category.id">
+                                  {{ category.name }}
+                         </option>
+                         </select>
+                    </div>
+
+                <div class="d-flex justify-content-center">
+                    <button type="submit" class="btn btn-block gradient-custom-4" class="btn btn-success">Validez</button>
+                    <button type="button" [routerLink]="['/products']" class="btn1 btn-success gradient-custom-4" class="btn btn-secondary">Annuler</button>
+                </div>    
+            </form>
+
+        </div>
+    </div>
+</div>
